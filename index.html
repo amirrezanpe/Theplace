@@ -588,6 +588,96 @@
     .map-link:hover { border-bottom-color: var(--red-bright); }
 
     /* ============================================================
+       DAHLIA FLOWERS & RESERVATIONS
+    ============================================================ */
+    .home-strip {
+      padding: 110px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    #dahlia-flowers.home-strip {
+      position: relative;
+      overflow: hidden;
+    }
+    .home-strip--dahlias { background: var(--dark-2); }
+    .dahlia-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/dahlia-totally-tubers-bg.png') center/cover no-repeat;
+      background-attachment: fixed;
+    }
+    .dahlia-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        165deg,
+        rgba(8, 3, 2, 0.78) 0%,
+        rgba(13, 7, 5, 0.62) 40%,
+        rgba(8, 3, 2, 0.82) 100%
+      );
+    }
+    .home-strip-inner--dahlia {
+      position: relative;
+      z-index: 2;
+    }
+    .dahlia-partner-logo-wrap {
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 auto 20px;
+      line-height: 0;
+      background: none;
+      border: 0;
+      box-shadow: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .dahlia-partner-logo-wrap:hover {
+      transform: scale(1.04);
+      opacity: 0.92;
+    }
+    .dahlia-partner-logo {
+      width: min(104px, 26vw);
+      height: auto;
+      display: block;
+      background: none;
+      background-color: transparent;
+      border: 0;
+      box-shadow: none;
+      border-radius: 15px;
+    }
+    .home-strip-text--on-photo {
+      color: rgba(224, 212, 192, 0.92);
+    }
+    .home-strip-text--on-photo a {
+      color: var(--cream);
+    }
+    .home-strip--reserve {
+      background: var(--dark);
+    }
+    .home-strip-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .home-strip .s-header { margin-bottom: 28px; }
+    .home-strip-text {
+      font-size: 1.06rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 36px;
+    }
+    .home-strip-text a {
+      color: var(--cream-dim);
+      border-bottom: 1px solid rgba(237,28,36,0.35);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .home-strip-text a:hover {
+      color: var(--cream);
+      border-bottom-color: var(--red-bright);
+    }
+
+    /* ============================================================
        FOOTER
     ============================================================ */
     #footer {
@@ -643,7 +733,7 @@
       .menu-tabs-bar { justify-content: flex-start; padding: 0 16px; }
       .menu-items { grid-template-columns: 1fr; gap: 0; }
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .order-bg { background-attachment: scroll; }
+      .order-bg, .dahlia-bg { background-attachment: scroll; }
     }
     @media (max-width: 480px) {
       .hero-btns, .order-btns { flex-direction: column; align-items: center; }
@@ -692,6 +782,7 @@
     <div class="hero-btns">
       <a href="https://theplaceroseville.square.site" target="_blank" class="btn-solid">🚗 Order Delivery</a>
       <a href="https://theplaceroseville.square.site" target="_blank" class="btn-ghost">🥡 Order Pickup</a>
+      <a href="https://www.exploretock.com/the-place-roseville" target="_blank" rel="noopener noreferrer" class="btn-ghost">🍽️ Make a Reservation</a>
     </div>
   </div>
   <div class="scroll-cue">
@@ -1045,6 +1136,23 @@
 </section>
 
 <!-- ======================================================
+     RESERVATIONS
+====================================================== -->
+<section id="reservations" class="home-strip home-strip--reserve" aria-labelledby="reservations-heading">
+  <div class="home-strip-inner">
+    <div class="s-header">
+      <span class="s-label">Dine With Us</span>
+      <h2 id="reservations-heading" class="s-title">Table <em>Reservations</em></h2>
+      <div class="s-rule"></div>
+    </div>
+    <p class="home-strip-text">Planning a night out? Reserve a table and we will have a spot ready—warm hospitality, scratch-made Italian, and a seat for you.</p>
+    <div class="order-btns">
+      <a href="https://www.exploretock.com/the-place-roseville" target="_blank" rel="noopener noreferrer" class="btn-solid">Make a Reservation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
      ABOUT
 ====================================================== -->
 <section id="about">
@@ -1125,6 +1233,28 @@
         <a href="https://theplaceroseville.square.site" target="_blank" class="btn-ghost" style="display:inline-flex;margin-top:4px;">Order Pickup</a>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     DAHLIA FLOWERS
+====================================================== -->
+<section id="dahlia-flowers" class="home-strip home-strip--dahlias" aria-labelledby="dahlia-heading">
+  <div class="dahlia-bg" aria-hidden="true"></div>
+  <div class="dahlia-overlay" aria-hidden="true"></div>
+  <div class="home-strip-inner home-strip-inner--dahlia">
+    <a href="https://totallytubers.com" target="_blank" rel="noopener noreferrer" class="dahlia-partner-logo-wrap" aria-label="Totally Tubers — visit website">
+      <img src="images/totally-tubers-logo.png" alt="Totally Tubers" class="dahlia-partner-logo" width="512" height="512" loading="lazy" decoding="async" />
+    </a>
+    <div class="s-header">
+      <span class="s-label">Totally Tubers</span>
+      <h2 id="dahlia-heading" class="s-title">Dahlia <em>Flowers</em></h2>
+      <div class="s-rule"></div>
+    </div>
+    <p class="home-strip-text home-strip-text--on-photo">Beautiful dahlias are available too—through our friends at <a href="https://totallytubers.com" target="_blank" rel="noopener noreferrer">Totally Tubers</a>, a family-run farm offering premium tubers, cuttings, and fresh blooms. Visit them online to shop or learn more.</p>
+    <div class="order-btns">
+      <a href="https://totallytubers.com" target="_blank" rel="noopener noreferrer" class="btn-solid">Shop Dahlia Flowers</a>
     </div>
   </div>
 </section>
